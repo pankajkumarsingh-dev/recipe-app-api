@@ -5,9 +5,9 @@ services:
       context: .
       args:
         - DEV=true
-    port:
-      -"8000":"8000"
-    volumes:
-      -./app:/app
+    ports: # Key must be 'ports' (plural) and aligned with 'build'
+      - "8000:8000" # Mapped as a list item, but without leading space error
+    volumes: # Key must be aligned with 'build' and 'ports'
+      - ./app:/app # The volume path must have a space after the hyphen
     command: >
       sh -c "python manage.py runserver 0.0.0.0:8000"
