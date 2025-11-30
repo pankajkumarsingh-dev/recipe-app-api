@@ -28,7 +28,7 @@ jobs:
       # 2. Run Tests
       # Use the 'run:' key for shell commands
       - name: Test
-        run: docker compose run --rm app sh -c "python manage.py test"
+        run: docker compose run --rm app sh -c "python manage.py wait_for_db python manage.py test"
         
       # 3. Run Linting
       # Use the 'run:' key for shell commands
