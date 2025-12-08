@@ -1,12 +1,12 @@
 """
-Serializer for reicpe APIs 
+Serializer for reicpe APIs
 """
 from rest_framework import serializers
 
 from core.models import Recipe
 
 
-class RecipeSerializer(serializers.ModelSerializers):
+class RecipeSerializer(serializers.ModelSerializer):
     """Serializer for recipes."""
 
     class Meta:
